@@ -1,0 +1,443 @@
+
+@import url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap');
+
+*{
+    font-family: 'Poppins', sans-serif;
+}
+  body {
+   margin: 0;
+    overflow-x: hidden;
+    font-family: "Montserrat", sans-serif;
+    background-color:white;
+  } 
+  ul {
+    margin: 0;
+    padding: 0;
+  }
+  
+  ul li {
+    list-style: none;
+  }
+  
+  a {
+    text-decoration: none;
+    color: #fff;
+  }
+  .menu {
+    display: flex;
+    overflow: hidden;
+    position: relative;
+  }
+  
+  .menu-link {
+    width: 25%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+    position: relative;
+    transition: all 0.4s ease-in-out;
+    animation: menu 0.6s ease forwards;
+  }
+  
+  @keyframes menu {
+    0% {
+      height: 0;
+      transform: translateY(-50%);
+    }
+  
+    100% {
+      height: 100vh;
+      transform: translateY(0%);
+    }
+  }
+  
+  /* now add background color individually */
+  
+  .menu-link:nth-child(1) {
+    background-color: #2d3561;
+    animation-duration: 0.6s;
+  }
+  
+  .menu .menu-link:nth-child(2) {
+    background-color: #c05c7e;
+    animation-duration: 0.8s;
+  }
+  
+  .menu .menu-link:nth-child(3) {
+    background-color: #f3826f;
+    animation-duration: 1s;
+  }
+  
+  .menu .menu-link:nth-child(4) {
+    background-color: #ffb961;
+    animation-duration: 1.2s;
+  }
+  
+  .menu .menu-link .text-item {
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: 800;
+    font-size: 40px;
+    opacity: 0.3;
+    width: 100%;
+    height: 20%;
+    letter-spacing: 5px;
+    transform: rotate(-90deg) translateX(0px);
+    transition: all 0.4s 0.2s ease, letter-spacing 0.2s ease-in, opacity 0.2s ease-in;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    transform-origin: center;
+    animation: text-in 0.6s ease;
+    position: absolute;
+  }
+  
+  @keyframes text-in {
+    0% {
+      opacity: 0;
+    }
+  
+    20% {
+      opacity: 0;
+    }
+  
+    100% {
+      opacity: 0.3;
+    }
+  }
+  
+  .menu .menu-link .text-item .icon {
+    position: absolute;
+    display: flex;
+    width: 30px;
+    height: 30px;
+    opacity:0;
+    transform: translateY(0px);
+    transition: all 0.4s ease-in-out;
+    background-image: url("https://rafaelalucas91.github.io/assets/icons/white/icon-54.svg");
+  }
+  
+  .menu .menu-link .submenu {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 40px;
+    box-sizing: border-box;
+    opacity: 0;
+    z-index: -1;
+    height: 0%;
+    width:100%;
+    transition: all 0.6s ease-in-out;
+    background-color: rgba(255, 255, 255, 0.1);
+    bottom: 0;
+    transform: translateY(50%);
+    position: absolute;
+  }
+  
+  .menu .menu-link .submenu .sub-item{
+    display: none;
+    margin: 10px 0;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 20px;
+    font-weight: 600;
+    position: relative;
+    width: fit-content;
+    cursor: pointer;
+    padding: 5px 15px;
+  }
+  
+  .menu .menu-link .submenu .sub-item:after {
+    width: 100%;
+    height: 100%;
+    transition: height 0.4s ease, width 0.4s 0.3s ease;
+  
+  }
+  
+  .menu .menu-link:hover{
+    width: 50%;
+    transition: all 0.4s ease-in-out;
+  }
+  
+  .menu .menu-link:hover .text-item {
+    height: 50%;
+    /* transform horizontally */
+    transform: rotate(0deg) translateX(0px);
+    font-size: 30px;
+    opacity: 1;
+    letter-spacing: 10px;
+  }
+  
+  .menu .menu-link:hover .text-item .icon {
+    opacity: 1;
+    /* push it down */
+    transform: translateY(40px);
+    transition: all 0.3s 0.4s ease-in-out;
+  }
+  
+  .menu .menu-link:hover.active .text-item .icon {
+    transform: translateY(40px) rotate(-180deg);
+    transition: all 0.3s ease-in-out;
+  }
+  
+  /* submenu should show on clicking the down arrow */
+  .menu .menu-link:hover.active .submenu {
+    transform: translateY(0);
+    height: 50%;
+    z-index: 1;
+    opacity: 1;
+    bottom: 0;
+  }
+  
+  .menu .menu-link:hover.active .submenu .sub-item {
+    display: flex;
+    animation: submenu 1s ease forwards;
+    z-index: 2;
+  }
+  
+  @keyframes submenu {
+    0% {
+      transform: translateX(50px) rotate(-5deg);
+      opacity: 0;
+    }
+  
+    50% {
+      transform: translateX(50px) rotate(-5deg);
+      opacity: 0;
+    }
+  
+    100% {
+      transform: translateX(0px) rotate(0deg);
+      opacity: 1;
+    }
+  }
+  
+  /* now, for every submenu item animation duration will be added */
+  .menu .menu-link:hover.active .submenu .sub-item:nth-child(1) {
+    animation-duration: 1s;
+  }
+  
+  .menu .menu-link:hover.active .submenu .sub-item:nth-child(2) {
+    animation-duration: 1.2s;
+  }
+  
+  .menu .menu-link:hover.active .submenu .sub-item:nth-child(3) {
+    animation-duration: 1.4s;
+  }
+  
+  
+  
+  @keyframes menu-close {
+    0% {
+      height: 100vh;
+    }
+  
+    100% {
+      height: 0;
+    }
+  }
+  
+  /* while closing the menu, the text item should be faded down */
+  nav .menu .menu-link .text-item {
+    animation: text-out 0.6s ease forwards;
+  }
+  
+  @keyframes text-out {
+    0% {
+      opacity: 0.3;
+    }
+  
+    80% {
+      opacity: 0;
+    }
+  
+    100% {
+      opacity: 0;
+    }
+  }
+
+  
+  nav {
+    display: flex;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #000;
+    z-index: 8;
+  }
+  
+  nav ul {
+    margin: 0;
+    padding: 0;
+    display: flex;  
+  }
+  .user{
+    position: absolute;
+    left: 76em;
+    top:15px;
+
+  }
+  .user span{
+    font-size: 23px;
+    font-weight: 500;
+  }
+  @keyframes typewriter {
+    from {
+      width: 0;
+    }
+    to {
+      width: 100%;
+    }
+  }
+  
+  .user span {
+    overflow: hidden;
+    white-space: nowrap;
+    animation: typewriter 1.5s steps(20) 1s;
+  }
+  
+  nav li {
+    display: flex;
+    list-style-type: none;
+    position: absolute;
+    left: 92em;
+    padding: 0.625rem 0 0.5rem;
+  }
+  nav li ul {
+    flex-direction: column;
+    position: absolute;
+    background-color: white;
+    align-items: flex-start;
+    transition: all 0.5s ease;
+    width: 14rem;
+    right: -2rem;
+    top: 4rem;
+    gap: 0;
+    padding: 1rem 0rem;
+    opacity: 0;
+    box-shadow: 0px 0px 100px rgba(20, 18, 18, 0.25);
+    display: none;
+  }
+  
+  nav ul li:hover > ul,
+  ul li ul:hover {
+    visibility: visible;
+    opacity: 1;
+    display: flex;
+  }
+  
+  .material-icons-outlined {
+    color: #888888;
+    transition: all 0.3s ease-out;
+  }
+  
+  .material-icons-outlined:hover {
+    color: #ff9800;
+    transform: scale(1.25) translateY(-4px);
+    cursor: pointer;
+  }
+  
+  
+  .profile {
+    height: 3rem;
+    width: auto;
+    cursor: pointer;
+  }
+  
+  .sub-item {
+    width: 50%;
+    display: flex;
+    position: relative;
+    left: 15%;
+    gap: 0.725rem;
+    cursor: pointer;
+    padding: 0.5rem 1.5rem;
+  }
+  
+  .sub-item:hover {
+    background-color: rgba(252, 12, 12, 0.991);
+  }
+  
+  .sub-item:hover .material-icons-outlined {
+    color: #ff9800;
+    transform: scale(1.0) translateY(-2px);
+    cursor: pointer;
+    overflow: hidden;
+  }
+  
+  .sub-item:hover p {
+    color: #000;
+    cursor: pointer;
+    overflow: hidden;
+  }
+  
+  .sub-item p {
+    font-size: 0.85rem;
+    color: #888888;
+    font-weight: 500;
+    margin: 0.4rem 0;
+    flex: 1;
+  }
+  .footer{
+    position: fixed;
+    align-items: center;
+    padding-top:10px;
+    box-sizing: border-box;
+    width:100%;
+    position: absolute;
+    bottom: 0;
+    text-align: center;
+    background-color: black;
+    color: white;
+  }
+  #socials{
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  
+  }
+  .footer li{
+   margin:20px;
+  }
+  .footer p{
+    align-self: flex-start;
+  }  
+  .footer p{
+    padding-top:10px;
+    text-transform: capitalize;
+    
+  }
+  .footer .facebook:hover{
+    color:rgb(9, 89, 209);
+    
+  }
+  .footer .google:hover{
+    color:rgb(3, 189, 18);
+    
+  }
+  .footer .instagram:hover{
+    color:rgb(196, 13, 165);
+    
+  }
+  .footer .twitter:hover{
+    color:rgb(7, 204, 230);
+    
+  }
+  .footer .youtube:hover{
+    color:rgb(219, 3, 3);
+    
+  }
+  
+  .footer a{
+    margin-bottom:10px;
+    padding-top:5px;
+    text-decoration: none;
+    color: white;
+    bottom: 0;
+  
+  }
