@@ -1,0 +1,283 @@
+
+@import url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap');
+
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    
+}
+.main{
+    position: absolute;
+    right: 0;
+    width: 100%;
+    min-height: 100vh;
+    padding: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    background-color: black;
+    z-index: 2;
+
+}
+ header{
+    position: absolute;
+    top:-60px;
+    left: 0;
+    width: 100px;
+    padding:40px 100px;
+    z-index: 1000;
+    cursor: pointer;
+    text-transform: uppercase;
+    transform: scale(0.8);
+    
+}
+video{
+    position: absolute;
+    top:0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.8;
+}
+
+.text{
+    position: absolute;
+    z-index: 10;
+}
+.text h1{
+    position: relative;
+    font-size: 90px;
+    text-transform: uppercase;
+    font-weight: 800;
+    overflow: hidden;
+    white-space: nowrap;
+    letter-spacing: 3px;
+}
+.animate{
+    position: relative;
+    font-size: 90px;
+    text-transform: uppercase;
+    font-weight: 800;
+    overflow: hidden;
+    animation: type 2500ms steps(10,end),colorc 4s steps(10,end);
+    white-space: nowrap;
+    letter-spacing: 3px;
+    
+}
+.text h3{
+    font-size: 60px;
+    text-transform: uppercase;
+    font-weight: 800;
+    line-height: 1cm;
+  
+
+}
+.text p{
+    font-size: 18px;
+    font-weight: 400;
+    margin: 20px 0;
+    max-width: 700px;
+   
+}
+
+
+
+
+@keyframes type{
+    from{
+        width: 0%
+    }
+
+    to{
+        width: 100%
+    }
+}
+@keyframes colorc{
+    from{
+        color: rgb(0, 238, 255)
+    }
+
+    to{
+        color: white
+    }
+}
+.wrapper{
+    position: relative;
+    width: 400px;
+    height: 500px;
+    background: transparent;
+    border: 2px solid rgba(255,255,255,.5);
+    border-radius: 20px;
+    backdrop-filter: blur(20px);
+    box-shadow: 0 0 30px rgba(0,0,0,.5);
+    padding: 40px;
+    left:70%;
+    overflow: hidden;
+    }
+  .form-wrapper {
+      display: flex;
+      align-items: center;
+      width: 100%;
+      height: 100%;
+      transition: 0.4s ease-in-out;
+      overflow: hidden;
+      }
+      .form-wrapper input::placeholder {
+        color: white;
+        
+      }
+  
+      .wrapper.active .form-wrapper.sign-in{
+        transform: scale(0) translate(0,0);
+       }
+       .wrapper.frgt .form-wrapper.sign-in{
+              transform: scale(0) translate(0,0);
+             }
+       
+       .wrapper .form-wrapper.sign-up{
+        position: absolute;
+        top: 0;
+        transform: scale(0) translate(200px, -500px);
+       } 
+      
+       .wrapper.active .form-wrapper.sign-up{
+        transform: scale(1) translate(0,0);
+       } 
+       .wrapper.frgt .form-wrapper.sign-up{
+              transform: scale(0) translate(0,0);
+             }
+       .wrapper .form-wrapper.forget{
+              position: absolute;
+              top: 0;
+              transform: scale(0) translate(200px, -500px);
+             }  
+      .wrapper.frgt .form-wrapper.forget{
+              transform: scale(1) translate(0,0);
+             }
+   .form-wrapper h2 {
+      font-size: 30px;
+      color: white;
+      text-align: center;
+      }
+  .input-group {
+      position: relative;
+      margin: 30px 0;
+      border-bottom: 2px solid #170d0d;
+      }
+  .input-group label {
+        position: absolute;
+        top: 50%;
+        left: 5px;
+        transform: translateY(-50%);
+        font-size: 16px;
+        color: white;
+        pointer-events: none;
+        transition: .5s;
+        }
+  .input-group input {
+        width: 320px;
+        height: 40px;
+        font-size: 16px;
+        color: white;
+        padding: 0 5px;
+        background: transparent;
+        border: none;
+        outline: none;
+        }
+  .input-group input:focus~label,   
+  .input-group input:valid~label{
+    top: -5px;
+  }  
+  
+  .remember{
+          margin: -5px 0 15px 5px;
+        }
+  .remember label {
+          color: white;
+          font-size: 14px;
+          }
+  .remember label input {
+          accent-color: #630912;;
+          }
+  button {
+
+          position: relative;
+          top: 70%;
+          width: 100%;
+          height: 40px;
+          background: #630912;;
+          font-size: 16px;
+          color:white;
+          cursor: pointer;
+          border-radius: 30px;
+          border: none;
+          outline: none;
+          }      
+  .signUp-link {
+            font-size: 14px;
+            text-align: center;
+            margin: 15px 0;
+            }
+  .signUp-link p {
+            color: #fff;
+            }
+  .signUp-link p a {
+            color: #ecb221;
+            text-decoration: none;
+            font-weight: 800s;
+            }
+  .signUp-link p a:hover {
+            text-decoration: underline;
+            }
+    .forget-link{
+        justify-content: center;
+        text-align: center;
+    }
+    .forget-link a{
+        text-decoration: none;
+        color: #ecb221;
+        font-size: 14px;
+
+    }
+    .forget-link2{
+        text-decoration: none;
+        color: #ecb221;
+        font-size: 17px;
+        position: relative;
+        left: 40%;
+        top: 30px;
+        
+
+    }
+    .forget-link2:hover{
+        text-decoration: underline;
+    }
+    .pt{
+        left: 15%;
+        position: relative;
+        top: 20px;
+    }
+    .wrapperotp{
+        position: relative;
+        width: 400px;
+        height: 400px;
+        background: transparent;
+        border: 2px solid rgba(255,255,255,.5);
+        border-radius: 20px;
+        backdrop-filter: blur(20px);
+        box-shadow: 0 0 30px rgba(0,0,0,.5);
+        padding: 40px;
+        left:70%;
+        }
+.my-swal-title{
+    color: blue;
+}
+
+    
+     
